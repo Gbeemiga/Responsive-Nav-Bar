@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'cursive';
+}
+body, html {
+    color :#ddd;
+}
+
+.nav {
+    background-color: dimgrey;
+    font-weight: bold;
+    font-size: 1rem;
+    color :#ddd;
+}
+.nav .nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav .nav-toggle > :is(#menu, #close) {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.nav .nav-toggle #close {
+    display: none;
+}
+
+.nav .nav-toggle #open {
+    display: block;
+}
+
+.nav .nav-checkbox {
+    display: none;
+    transition: 0.7s;
+}
+
+.nav .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav .nav-menu li {
+    list-style-type: none;
+    display: none;
+
+}
+
+.nav .nav-menu li a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav .nav-menu li #logo {
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #ddd;
+}
+
+.nav .nav-menu li:first-child {
+   margin-right: auto;
+   margin-top: 0.5rem;
+   margin-left: .5rem;
+   display: block;
+}
+
+.nav .nav-menu li:last-child {
+    margin-bottom: .7rem;
+}
+
+#nav-checkbox:checked  ~ ul.nav-menu li  {
+    display: block;
+}
+
+#nav-checkbox:checked ~ label.nav-toggle #close {
+    display: block;
+}
+
+#nav-checkbox:checked ~ label.nav-toggle #menu {
+   display: none;
+}
+
+
+@media screen and (min-width:562px) {
+    .nav label.nav-toggle {
+        display: none;
+    }
+
+    .nav .nav-menu {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .nav .nav-menu li {
+        display: block;
+    }
+    
+    .nav .nav-menu li:last-child {
+        margin-bottom: 0rem;
+        padding-right: 200px; 
+    }
+    
+}
+
